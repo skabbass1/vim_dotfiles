@@ -106,8 +106,6 @@ autocmd ColorScheme * highlight LineLengthError ctermbg=black guibg=black
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
-" Run terraform fmt on terraform files
-autocmd BufWritePre *.tf call terraform#fmt()
 
 " Status
 set laststatus=2
@@ -215,7 +213,8 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_trailing_whitespace_error = 0
 
 let test#strategy = "vimux"
-let test#python#runner = 'nose'
+let test#python#runner = 'pytest'
+let test#python#pytest#options = '-s'
 
 " ========= Shortcuts ========
 
